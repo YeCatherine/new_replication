@@ -8,7 +8,11 @@ Person.prototype.introduce = function () {
 };
 
 function myNew(newObj) {
-  let myObj = new newObj();
+  let myObj = {};
+  myObj.__proto__ = newObj.prototype;
+  myObj.constructor = newObj;
+  newObj.call(myObj);
+
   let myKeys = Object.keys(myObj);
   let j = 1;
   for (let i = 0; i < myKeys.length; i++) {
