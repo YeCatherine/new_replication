@@ -1,12 +1,28 @@
+/**
+ * @param name {string}
+ * Person's name
+ * @param age {string}
+ * Person's age
+ * @constructor function Person
+ */
 function Person(name, age) {
   this.name = name;
   this.age = age;
 }
 
+/**
+ * @function expression Person.prototype.introduce
+ * @returns {string} the introduce method of Person
+ */
 Person.prototype.introduce = function () {
   return "My name is " + this.name + " and I am " + this.age;
 };
 
+/**
+ * @function myNew
+ * @param newObj {object} the object for prototyping
+ * @returns {{}} the new object of Person
+ */
 function myNew(newObj) {
   let myObj = {};
   myObj.__proto__ = newObj.prototype;
